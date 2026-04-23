@@ -14,12 +14,13 @@ class QAExample(BaseModel):
     context: list[ContextChunk]
 
 class JudgeResult(BaseModel):
-    # TODO: Học viên định nghĩa các trường cần thiết cho kết quả đánh giá (score, reason, ...)
-    pass
+    score: int   # 0 = incorrect, 1 = correct
+    reason: str  # explanation from the evaluator
 
 class ReflectionEntry(BaseModel):
-    # TODO: Học viên định nghĩa các trường cần thiết cho một mục reflection (attempt_id, lesson, strategy, ...)
-    pass
+    attempt_id: int   # which attempt this reflection is for
+    lesson: str       # what went wrong in this attempt
+    strategy: str     # concrete strategy to try next
 
 class AttemptTrace(BaseModel):
     attempt_id: int
