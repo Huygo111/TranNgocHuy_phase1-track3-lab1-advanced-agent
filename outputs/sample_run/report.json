@@ -1,0 +1,2064 @@
+{
+  "meta": {
+    "dataset": "hotpot_100.json",
+    "mode": "mock",
+    "num_records": 200,
+    "agents": [
+      "react",
+      "reflexion"
+    ]
+  },
+  "summary": {
+    "react": {
+      "count": 100,
+      "em": 0.23,
+      "avg_attempts": 1,
+      "avg_token_estimate": 532.38,
+      "avg_latency_ms": 4094.9
+    },
+    "reflexion": {
+      "count": 100,
+      "em": 0.33,
+      "avg_attempts": 2.53,
+      "avg_token_estimate": 1636.06,
+      "avg_latency_ms": 17075.6
+    },
+    "delta_reflexion_minus_react": {
+      "em_abs": 0.1,
+      "attempts_abs": 1.53,
+      "tokens_abs": 1103.68,
+      "latency_abs": 12980.7
+    }
+  },
+  "failure_modes": {
+    "react": {
+      "entity_drift": 61,
+      "none": 23,
+      "incomplete_multi_hop": 14,
+      "wrong_final_answer": 2
+    },
+    "reflexion": {
+      "entity_drift": 51,
+      "none": 33,
+      "incomplete_multi_hop": 8,
+      "looping": 7,
+      "wrong_final_answer": 1
+    },
+    "combined": {
+      "entity_drift": 112,
+      "none": 56,
+      "incomplete_multi_hop": 22,
+      "wrong_final_answer": 3,
+      "looping": 7
+    }
+  },
+  "examples": [
+    {
+      "qid": "5a7a567255429941d65f25bd",
+      "agent_type": "react",
+      "gold_answer": "flotilla",
+      "predicted_answer": "I am sorry, but the provided context does not contain information about Iqbal F. Qadir or an attack on a radar station located on the western shore of the Okhamandal Peninsula.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abca1a55542993a06baf937",
+      "agent_type": "react",
+      "gold_answer": "15 August 1843",
+      "predicted_answer": "15 August 1843",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a73977d554299623ed4ac08",
+      "agent_type": "react",
+      "gold_answer": "Armenian",
+      "predicted_answer": "Information not available",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab514c05542991779162d72",
+      "agent_type": "react",
+      "gold_answer": "Centre of Excellence",
+      "predicted_answer": "The context does not mention the Wilmslow Show.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5add2b435542990d50227e11",
+      "agent_type": "react",
+      "gold_answer": "Saoirse Ronan",
+      "predicted_answer": "Saoirse Ronan",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a88d6df554299206df2b377",
+      "agent_type": "react",
+      "gold_answer": "The Lorax",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae6b6065542991bbc976168",
+      "agent_type": "react",
+      "gold_answer": "Scott Adkins",
+      "predicted_answer": "The provided context does not contain this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae531ee5542990ba0bbb1ff",
+      "agent_type": "react",
+      "gold_answer": "War & Peace",
+      "predicted_answer": "War and Peace",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8aa5835542996c9b8d5f4e",
+      "agent_type": "react",
+      "gold_answer": "Midnight Oil",
+      "predicted_answer": "Information not available",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab82d095542990e739ec853",
+      "agent_type": "react",
+      "gold_answer": "1967",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4c01e55429913cc2044f3",
+      "agent_type": "react",
+      "gold_answer": "Captain John Underhill",
+      "predicted_answer": "I apologize, but the provided context does not contain information about any captains, attacks, or casualties in a war between the settlers of New Netherland and the native Lenape population.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a89fea655429970aeb701eb",
+      "agent_type": "react",
+      "gold_answer": "The Outsiders",
+      "predicted_answer": "The provided context does not contain information about \"Night",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a80cf4c55429938b61421f6",
+      "agent_type": "react",
+      "gold_answer": "to ensure wide visibility and understanding of cases in a region",
+      "predicted_answer": "The provided context does not contain information about Eric S. Pistorius or his business after being an attorney.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a89b1de5542992e4fca8378",
+      "agent_type": "react",
+      "gold_answer": "Keelung",
+      "predicted_answer": "Not discernible from the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8778d25542994846c1cd89",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a77897f55429949eeb29edc",
+      "agent_type": "react",
+      "gold_answer": "an organ",
+      "predicted_answer": "The context does not contain information about Jason Regler or flashing wristbands.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0132d55429925eb1afc00",
+      "agent_type": "react",
+      "gold_answer": "the George Washington Bridge",
+      "predicted_answer": "The context does not provide information about \"The Soul of Buddha.\"",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7129685542994082a3e5fa",
+      "agent_type": "react",
+      "gold_answer": "Vitor Belfort",
+      "predicted_answer": "Not found",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae762835542997b22f6a711",
+      "agent_type": "react",
+      "gold_answer": "tip of the Baja California",
+      "predicted_answer": "On the Pacific coast",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae2f5b955429928c423957e",
+      "agent_type": "react",
+      "gold_answer": "The Tugurt language",
+      "predicted_answer": "Berber",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a81018755429938b6142287",
+      "agent_type": "react",
+      "gold_answer": "Q",
+      "predicted_answer": "Q",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae7b271554299540e5a564d",
+      "agent_type": "react",
+      "gold_answer": "2002",
+      "predicted_answer": "The provided context does not mention when the audio versions",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a89a74e554299669944a562",
+      "agent_type": "react",
+      "gold_answer": "Oliver Parker",
+      "predicted_answer": "Oliver Parker",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adcceda5542990d50227d31",
+      "agent_type": "react",
+      "gold_answer": "a British composer",
+      "predicted_answer": "UK",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7518cb55429916b0164259",
+      "agent_type": "react",
+      "gold_answer": "Rafael M\u00e1rquez",
+      "predicted_answer": "The context does not provide information about Juan Manuel M\u00e1rquez's brother.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab9180b5542991b5579f0f3",
+      "agent_type": "react",
+      "gold_answer": "South Korea",
+      "predicted_answer": "South Korea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abb326055429966062416e7",
+      "agent_type": "react",
+      "gold_answer": "Bury St Edmunds",
+      "predicted_answer": "The provided context does not contain information about Ruddles Brewery.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ef1e35542995a26add57a",
+      "agent_type": "react",
+      "gold_answer": "1954",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf03b35542993a75d263d3",
+      "agent_type": "react",
+      "gold_answer": "France.",
+      "predicted_answer": "The context does not mention Eagle Aviation.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a88d745554299206df2b378",
+      "agent_type": "react",
+      "gold_answer": "director",
+      "predicted_answer": "Information about David Yates is not provided.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab3bacc55429969a97a8197",
+      "agent_type": "react",
+      "gold_answer": "Noel Gallagher",
+      "predicted_answer": "Liam Gallagher",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f244255429934daa2fcec",
+      "agent_type": "react",
+      "gold_answer": "Grammar, logic, and rhetoric",
+      "predicted_answer": "Grammar, logic, and rhetoric",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac39f7b554299218029dbe7",
+      "agent_type": "react",
+      "gold_answer": "Harry F. Sinclair",
+      "predicted_answer": "I cannot answer this question based on the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a810d7655429903bc27b915",
+      "agent_type": "react",
+      "gold_answer": "bass",
+      "predicted_answer": "Not in the provided context",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae4cb2f55429960a22e01e8",
+      "agent_type": "react",
+      "gold_answer": "Linda Maria Ronstadt",
+      "predicted_answer": "Information not available in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf1c3f5542993a75d263ec",
+      "agent_type": "react",
+      "gold_answer": "Brittany, Cornwall, Ireland, Isle of Man, Scotland and Wales.",
+      "predicted_answer": "The provided context does not contain the answer.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab61140554299110f2199d7",
+      "agent_type": "react",
+      "gold_answer": "Thomas Montgomery Newman",
+      "predicted_answer": "Thomas Newman",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a738fe855429908901be2fb",
+      "agent_type": "react",
+      "gold_answer": "Awake",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adcc3ed5542994d58a2f6c4",
+      "agent_type": "react",
+      "gold_answer": "the \"First Family of Competitive Eating\"",
+      "predicted_answer": "The provided context does not state that Carl",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae5ffbb5542996de7b71ad4",
+      "agent_type": "react",
+      "gold_answer": "Argentinian",
+      "predicted_answer": "Not answerable",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae357745542992f92d8229b",
+      "agent_type": "react",
+      "gold_answer": "Walt Disney Productions",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae200655542994d89d5b2f4",
+      "agent_type": "react",
+      "gold_answer": "1,840 students",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf430e5542993a75d2645e",
+      "agent_type": "react",
+      "gold_answer": "Dundee Canal",
+      "predicted_answer": "The provided context does not contain this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adc99cf554299438c868e0d",
+      "agent_type": "react",
+      "gold_answer": "Jane",
+      "predicted_answer": "Not enough information",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab262a4554299340b5254ac",
+      "agent_type": "react",
+      "gold_answer": "The Most Dangerous Game",
+      "predicted_answer": "The Most Dangerous Game",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a770d785542993569682cad",
+      "agent_type": "react",
+      "gold_answer": "North West England",
+      "predicted_answer": "Not answerable",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7f275d55429934daa2fd01",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae54b6355429908b63265cc",
+      "agent_type": "react",
+      "gold_answer": "family",
+      "predicted_answer": "Not specified in context",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac4c16b5542997ea680cab4",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab3c18b55429969a97a81b0",
+      "agent_type": "react",
+      "gold_answer": "St. Patrick's Day in 1988",
+      "predicted_answer": "The information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a84b0705542991dd0999d86",
+      "agent_type": "react",
+      "gold_answer": "Diamond White",
+      "predicted_answer": "Information not found in provided context.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae151985542990adbacf74d",
+      "agent_type": "react",
+      "gold_answer": "Manchester Orchestra",
+      "predicted_answer": "Cannot be determined",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abdba405542993f32c2a023",
+      "agent_type": "react",
+      "gold_answer": "Perfect Strangers",
+      "predicted_answer": "The provided context does not contain information about Orlando Brown or the sitcom he was in.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a80721b554299485f5985ef",
+      "agent_type": "react",
+      "gold_answer": "World War II",
+      "predicted_answer": "World War II",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab41677554299753aec5a38",
+      "agent_type": "react",
+      "gold_answer": "World War I fighter aircraft.",
+      "predicted_answer": "Allied World War I fighter aircraft",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adcf37e5542994ed6169c37",
+      "agent_type": "react",
+      "gold_answer": "BMW X6",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae33fa95542990afbd1e0f2",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Not enough information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5aba510f5542994dbf0198d6",
+      "agent_type": "react",
+      "gold_answer": "Yakuza",
+      "predicted_answer": "Yakuza",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7d1765554299452d57bade",
+      "agent_type": "react",
+      "gold_answer": "filibuster",
+      "predicted_answer": "The information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0536755429924de1b70a6",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "Not answerable",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abcf84d55429959677d6b86",
+      "agent_type": "react",
+      "gold_answer": "Mexican War on Drugs",
+      "predicted_answer": "Mexican War on Drugs",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab5c8c5554299637185c60d",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "Not enough information",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac0714f554299294b218fe1",
+      "agent_type": "react",
+      "gold_answer": "1991 Perfect Storm",
+      "predicted_answer": "The context does not contain information about Robert Allen \"Bob\" Case.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adcdea85542992c1e3a2441",
+      "agent_type": "react",
+      "gold_answer": "Chinese Coffee",
+      "predicted_answer": "Not enough information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac257fe55429951e9e68562",
+      "agent_type": "react",
+      "gold_answer": "Robert Louis Fosse",
+      "predicted_answer": "Cannot answer",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae8242455429952e35eaa54",
+      "agent_type": "react",
+      "gold_answer": "BitInstant",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adfd56655429925eb1afaac",
+      "agent_type": "react",
+      "gold_answer": "David Patrick Griffin",
+      "predicted_answer": "No information available.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae0f5fc554299422ee9957c",
+      "agent_type": "react",
+      "gold_answer": "Aristotle",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae5d63b5542996de7b71a2d",
+      "agent_type": "react",
+      "gold_answer": "small forward",
+      "predicted_answer": "The context does not provide information about Saulius Kuzminskas's brother.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab29caa554299545a2cf9d3",
+      "agent_type": "react",
+      "gold_answer": "PlayStation 4",
+      "predicted_answer": "The provided context does not contain information about Yakuza Kiwami or Yakuza 0.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7c76275542990527d554b4",
+      "agent_type": "react",
+      "gold_answer": "Miracle of the White Stallions",
+      "predicted_answer": "I don't have information about Miracle of",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a737fff554299623ed4abb9",
+      "agent_type": "react",
+      "gold_answer": "Scotiabank Saddledome",
+      "predicted_answer": "Scotiabank Saddledome",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8051265542992bc0c4a6f8",
+      "agent_type": "react",
+      "gold_answer": "Cool Runnings",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a89a13c55429946c8d6e97a",
+      "agent_type": "react",
+      "gold_answer": "Lee County, Mississippi",
+      "predicted_answer": "I am sorry, but the provided context does not contain information about \"Trace State Park\" or the city 7 miles east of it. Therefore, I cannot answer the question.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab8854555429934fafe6e0c",
+      "agent_type": "react",
+      "gold_answer": "drawings",
+      "predicted_answer": "The information needed to answer this question is not",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab865ad5542992aa3b8c8dd",
+      "agent_type": "react",
+      "gold_answer": "Radcliffe College",
+      "predicted_answer": "The provided context does not contain information about Jennifer Gordon or the college she attended.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a83305d55429966c78a6b4a",
+      "agent_type": "react",
+      "gold_answer": "District of Columbia",
+      "predicted_answer": "I cannot answer this question based on the provided context",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a821c95554299676cceb219",
+      "agent_type": "react",
+      "gold_answer": "1979",
+      "predicted_answer": "The information is not available in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abe8aad55429976d4830b60",
+      "agent_type": "react",
+      "gold_answer": "Kenneth John \"Kenny\" Ortega (born April 18, 1950) is an American producer, director, and choreographer.",
+      "predicted_answer": "The provided context does not contain information",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a82ffe755429940e5e1a949",
+      "agent_type": "react",
+      "gold_answer": "2001",
+      "predicted_answer": "Not in the context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd516a5542992ac4f3825c",
+      "agent_type": "react",
+      "gold_answer": "Hindi",
+      "predicted_answer": "Not answerable",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7323ef5542994cef4bc477",
+      "agent_type": "react",
+      "gold_answer": "The Battle of Tarawa",
+      "predicted_answer": "Information not available in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae738f75542991bbc9761c4",
+      "agent_type": "react",
+      "gold_answer": "2003",
+      "predicted_answer": "I am sorry, but the provided context does not contain information about a first-round draft pick by the Washington Redskins or their brother's draft year.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a89fc665542993b751ca9de",
+      "agent_type": "react",
+      "gold_answer": "Universal Studios Florida",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a76394c5542994ccc918725",
+      "agent_type": "react",
+      "gold_answer": "1968",
+      "predicted_answer": "1968",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abe91895542993f32c2a168",
+      "agent_type": "react",
+      "gold_answer": "no",
+      "predicted_answer": "No",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab3ede755429976abd1bcf4",
+      "agent_type": "react",
+      "gold_answer": "John Ford",
+      "predicted_answer": "I don't know",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adfec5f55429942ec259b8d",
+      "agent_type": "react",
+      "gold_answer": "yes",
+      "predicted_answer": "I don't know.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac2660d55429951e9e685a1",
+      "agent_type": "react",
+      "gold_answer": "Idina Kim Menzel",
+      "predicted_answer": "Information not found in the context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab6a3a3554299710c8d1f0d",
+      "agent_type": "react",
+      "gold_answer": "ten episodes",
+      "predicted_answer": "Information not found",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a75eda35542994ccc918661",
+      "agent_type": "react",
+      "gold_answer": "15th consecutive",
+      "predicted_answer": "Not answerable from the given context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abb8ebe5542993f40c73b2d",
+      "agent_type": "react",
+      "gold_answer": "\"Dancing on Ice\" around the world",
+      "predicted_answer": "The context does not mention Claudia Albertario.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8318955542990548d0b177",
+      "agent_type": "react",
+      "gold_answer": "two Grammy awards",
+      "predicted_answer": "Two",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a81cb2c5542990a1d231ec4",
+      "agent_type": "react",
+      "gold_answer": "Player of the Year",
+      "predicted_answer": "Crystal Palace Football Club Player of the Year",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ec7cc5542995a26add518",
+      "agent_type": "react",
+      "gold_answer": "Girlfriends",
+      "predicted_answer": "I don't have enough information.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abd9c2355429924427fd06c",
+      "agent_type": "react",
+      "gold_answer": "2005",
+      "predicted_answer": "The information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adeab4555429975fa854f5f",
+      "agent_type": "react",
+      "gold_answer": "4,530",
+      "predicted_answer": "I am sorry, but the provided context does not contain information about where The Robey-Peters Gun-Carrier was built, nor does it provide population data for any village at the 2001 census.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a82360055429903bc27ba46",
+      "agent_type": "react",
+      "gold_answer": "Quasimodo",
+      "predicted_answer": "Quasimodo",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abacac45542996cc5e49e94",
+      "agent_type": "react",
+      "gold_answer": "West Dorset, South West England.",
+      "predicted_answer": "South West England",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adf24155542992d7e9f92af",
+      "agent_type": "react",
+      "gold_answer": "Oberkommando der Wehrmacht",
+      "predicted_answer": "Not in the provided context",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "entity_drift",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7a567255429941d65f25bd",
+      "agent_type": "reflexion",
+      "gold_answer": "flotilla",
+      "predicted_answer": "The provided context does not contain this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abca1a55542993a06baf937",
+      "agent_type": "reflexion",
+      "gold_answer": "15 August 1843",
+      "predicted_answer": "15 August 1843",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a73977d554299623ed4ac08",
+      "agent_type": "reflexion",
+      "gold_answer": "Armenian",
+      "predicted_answer": "Not answerable from the given context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab514c05542991779162d72",
+      "agent_type": "reflexion",
+      "gold_answer": "Centre of Excellence",
+      "predicted_answer": "The context does not mention the Wilmslow Show.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5add2b435542990d50227e11",
+      "agent_type": "reflexion",
+      "gold_answer": "Saoirse Ronan",
+      "predicted_answer": "Saoirse Ronan",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a88d6df554299206df2b377",
+      "agent_type": "reflexion",
+      "gold_answer": "The Lorax",
+      "predicted_answer": "Not enough information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae6b6065542991bbc976168",
+      "agent_type": "reflexion",
+      "gold_answer": "Scott Adkins",
+      "predicted_answer": "I am sorry, but the provided context does",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae531ee5542990ba0bbb1ff",
+      "agent_type": "reflexion",
+      "gold_answer": "War & Peace",
+      "predicted_answer": "War and Peace",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8aa5835542996c9b8d5f4e",
+      "agent_type": "reflexion",
+      "gold_answer": "Midnight Oil",
+      "predicted_answer": "Unable to determine from the given context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab82d095542990e739ec853",
+      "agent_type": "reflexion",
+      "gold_answer": "1967",
+      "predicted_answer": "Not found in context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae4c01e55429913cc2044f3",
+      "agent_type": "reflexion",
+      "gold_answer": "Captain John Underhill",
+      "predicted_answer": "The provided context does not contain this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a89fea655429970aeb701eb",
+      "agent_type": "reflexion",
+      "gold_answer": "The Outsiders",
+      "predicted_answer": "The necessary information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a80cf4c55429938b61421f6",
+      "agent_type": "reflexion",
+      "gold_answer": "to ensure wide visibility and understanding of cases in a region",
+      "predicted_answer": "The information is not available in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a89b1de5542992e4fca8378",
+      "agent_type": "reflexion",
+      "gold_answer": "Keelung",
+      "predicted_answer": "Not enough information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a8778d25542994846c1cd89",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Cannot be determined",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a77897f55429949eeb29edc",
+      "agent_type": "reflexion",
+      "gold_answer": "an organ",
+      "predicted_answer": "The context does not contain this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae0132d55429925eb1afc00",
+      "agent_type": "reflexion",
+      "gold_answer": "the George Washington Bridge",
+      "predicted_answer": "I cannot answer this question based on the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7129685542994082a3e5fa",
+      "agent_type": "reflexion",
+      "gold_answer": "Vitor Belfort",
+      "predicted_answer": "No fighter is mentioned as being a \"Blackz",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae762835542997b22f6a711",
+      "agent_type": "reflexion",
+      "gold_answer": "tip of the Baja California",
+      "predicted_answer": "on the Pacific coast",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae2f5b955429928c423957e",
+      "agent_type": "reflexion",
+      "gold_answer": "The Tugurt language",
+      "predicted_answer": "Information not found",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a81018755429938b6142287",
+      "agent_type": "reflexion",
+      "gold_answer": "Q",
+      "predicted_answer": "Q",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae7b271554299540e5a564d",
+      "agent_type": "reflexion",
+      "gold_answer": "2002",
+      "predicted_answer": "The information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a89a74e554299669944a562",
+      "agent_type": "reflexion",
+      "gold_answer": "Oliver Parker",
+      "predicted_answer": "Oliver Parker",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5adcceda5542990d50227d31",
+      "agent_type": "reflexion",
+      "gold_answer": "a British composer",
+      "predicted_answer": "United Kingdom",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a7518cb55429916b0164259",
+      "agent_type": "reflexion",
+      "gold_answer": "Rafael M\u00e1rquez",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab9180b5542991b5579f0f3",
+      "agent_type": "reflexion",
+      "gold_answer": "South Korea",
+      "predicted_answer": "South Korea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abb326055429966062416e7",
+      "agent_type": "reflexion",
+      "gold_answer": "Bury St Edmunds",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a8ef1e35542995a26add57a",
+      "agent_type": "reflexion",
+      "gold_answer": "1954",
+      "predicted_answer": "Not in the provided context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adf03b35542993a75d263d3",
+      "agent_type": "reflexion",
+      "gold_answer": "France.",
+      "predicted_answer": "The provided context does not mention Eagle Aviation.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a88d745554299206df2b378",
+      "agent_type": "reflexion",
+      "gold_answer": "director",
+      "predicted_answer": "Information about David Yates is not available in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab3bacc55429969a97a8197",
+      "agent_type": "reflexion",
+      "gold_answer": "Noel Gallagher",
+      "predicted_answer": "The information is not available in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7f244255429934daa2fcec",
+      "agent_type": "reflexion",
+      "gold_answer": "Grammar, logic, and rhetoric",
+      "predicted_answer": "Grammar, logic, and rhetoric",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ac39f7b554299218029dbe7",
+      "agent_type": "reflexion",
+      "gold_answer": "Harry F. Sinclair",
+      "predicted_answer": "The context does not provide information about Robert Earl Holding or an oil company he owned.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a810d7655429903bc27b915",
+      "agent_type": "reflexion",
+      "gold_answer": "bass",
+      "predicted_answer": "Not in the provided context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae4cb2f55429960a22e01e8",
+      "agent_type": "reflexion",
+      "gold_answer": "Linda Maria Ronstadt",
+      "predicted_answer": "Information not found.",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adf1c3f5542993a75d263ec",
+      "agent_type": "reflexion",
+      "gold_answer": "Brittany, Cornwall, Ireland, Isle of Man, Scotland and Wales.",
+      "predicted_answer": "The provided context does not list the six Western European",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab61140554299110f2199d7",
+      "agent_type": "reflexion",
+      "gold_answer": "Thomas Montgomery Newman",
+      "predicted_answer": "Thomas Newman",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a738fe855429908901be2fb",
+      "agent_type": "reflexion",
+      "gold_answer": "Awake",
+      "predicted_answer": "The information is not provided in the context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adcc3ed5542994d58a2f6c4",
+      "agent_type": "reflexion",
+      "gold_answer": "the \"First Family of Competitive Eating\"",
+      "predicted_answer": "Not mentioned in the context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae5ffbb5542996de7b71ad4",
+      "agent_type": "reflexion",
+      "gold_answer": "Argentinian",
+      "predicted_answer": "Not found in context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae357745542992f92d8229b",
+      "agent_type": "reflexion",
+      "gold_answer": "Walt Disney Productions",
+      "predicted_answer": "Information not available.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae200655542994d89d5b2f4",
+      "agent_type": "reflexion",
+      "gold_answer": "1,840 students",
+      "predicted_answer": "I am sorry, but the provided context does not contain information about Chris Barnes or the enrollment of his high school.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adf430e5542993a75d2645e",
+      "agent_type": "reflexion",
+      "gold_answer": "Dundee Canal",
+      "predicted_answer": "I cannot answer this question based on the",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adc99cf554299438c868e0d",
+      "agent_type": "reflexion",
+      "gold_answer": "Jane",
+      "predicted_answer": "Jane",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab262a4554299340b5254ac",
+      "agent_type": "reflexion",
+      "gold_answer": "The Most Dangerous Game",
+      "predicted_answer": "The Most Dangerous Game",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a770d785542993569682cad",
+      "agent_type": "reflexion",
+      "gold_answer": "North West England",
+      "predicted_answer": "United States",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7f275d55429934daa2fd01",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ae54b6355429908b63265cc",
+      "agent_type": "reflexion",
+      "gold_answer": "family",
+      "predicted_answer": "Nothing",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ac4c16b5542997ea680cab4",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Yes",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab3c18b55429969a97a81b0",
+      "agent_type": "reflexion",
+      "gold_answer": "St. Patrick's Day in 1988",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a84b0705542991dd0999d86",
+      "agent_type": "reflexion",
+      "gold_answer": "Diamond White",
+      "predicted_answer": "Information not available.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ae151985542990adbacf74d",
+      "agent_type": "reflexion",
+      "gold_answer": "Manchester Orchestra",
+      "predicted_answer": "Not enough information",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abdba405542993f32c2a023",
+      "agent_type": "reflexion",
+      "gold_answer": "Perfect Strangers",
+      "predicted_answer": "Not answerable from the given context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a80721b554299485f5985ef",
+      "agent_type": "reflexion",
+      "gold_answer": "World War II",
+      "predicted_answer": "World War II",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab41677554299753aec5a38",
+      "agent_type": "reflexion",
+      "gold_answer": "World War I fighter aircraft.",
+      "predicted_answer": "Allied World War I fighter aircraft",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5adcf37e5542994ed6169c37",
+      "agent_type": "reflexion",
+      "gold_answer": "BMW X6",
+      "predicted_answer": "The context does not mention the BMW X5",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae33fa95542990afbd1e0f2",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "Not enough information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5aba510f5542994dbf0198d6",
+      "agent_type": "reflexion",
+      "gold_answer": "Yakuza",
+      "predicted_answer": "Yakuza",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a7d1765554299452d57bade",
+      "agent_type": "reflexion",
+      "gold_answer": "filibuster",
+      "predicted_answer": "I cannot answer this question based on the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae0536755429924de1b70a6",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "Cannot answer",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abcf84d55429959677d6b86",
+      "agent_type": "reflexion",
+      "gold_answer": "Mexican War on Drugs",
+      "predicted_answer": "Mexican War on Drugs",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab5c8c5554299637185c60d",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ac0714f554299294b218fe1",
+      "agent_type": "reflexion",
+      "gold_answer": "1991 Perfect Storm",
+      "predicted_answer": "I cannot answer this question based on the provided context",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adcdea85542992c1e3a2441",
+      "agent_type": "reflexion",
+      "gold_answer": "Chinese Coffee",
+      "predicted_answer": "Not provided in the context",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5ac257fe55429951e9e68562",
+      "agent_type": "reflexion",
+      "gold_answer": "Robert Louis Fosse",
+      "predicted_answer": "Cannot answer",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae8242455429952e35eaa54",
+      "agent_type": "reflexion",
+      "gold_answer": "BitInstant",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adfd56655429925eb1afaac",
+      "agent_type": "reflexion",
+      "gold_answer": "David Patrick Griffin",
+      "predicted_answer": "Information not found",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae0f5fc554299422ee9957c",
+      "agent_type": "reflexion",
+      "gold_answer": "Aristotle",
+      "predicted_answer": "The context does not mention Neleus of Scepsis.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae5d63b5542996de7b71a2d",
+      "agent_type": "reflexion",
+      "gold_answer": "small forward",
+      "predicted_answer": "Information not available",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab29caa554299545a2cf9d3",
+      "agent_type": "reflexion",
+      "gold_answer": "PlayStation 4",
+      "predicted_answer": "Information not found in context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7c76275542990527d554b4",
+      "agent_type": "reflexion",
+      "gold_answer": "Miracle of the White Stallions",
+      "predicted_answer": "Information not available",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a737fff554299623ed4abb9",
+      "agent_type": "reflexion",
+      "gold_answer": "Scotiabank Saddledome",
+      "predicted_answer": "Scotiabank Saddledome",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8051265542992bc0c4a6f8",
+      "agent_type": "reflexion",
+      "gold_answer": "Cool Runnings",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a89a13c55429946c8d6e97a",
+      "agent_type": "reflexion",
+      "gold_answer": "Lee County, Mississippi",
+      "predicted_answer": "Information not available.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab8854555429934fafe6e0c",
+      "agent_type": "reflexion",
+      "gold_answer": "drawings",
+      "predicted_answer": "The context does not contain information about Hanna",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab865ad5542992aa3b8c8dd",
+      "agent_type": "reflexion",
+      "gold_answer": "Radcliffe College",
+      "predicted_answer": "The provided context does not contain information about Jennifer Gordon or the college she attended.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a83305d55429966c78a6b4a",
+      "agent_type": "reflexion",
+      "gold_answer": "District of Columbia",
+      "predicted_answer": "Information not found",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a821c95554299676cceb219",
+      "agent_type": "reflexion",
+      "gold_answer": "1979",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abe8aad55429976d4830b60",
+      "agent_type": "reflexion",
+      "gold_answer": "Kenneth John \"Kenny\" Ortega (born April 18, 1950) is an American producer, director, and choreographer.",
+      "predicted_answer": "The provided context does not state that",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a82ffe755429940e5e1a949",
+      "agent_type": "reflexion",
+      "gold_answer": "2001",
+      "predicted_answer": "Not in the context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abd516a5542992ac4f3825c",
+      "agent_type": "reflexion",
+      "gold_answer": "Hindi",
+      "predicted_answer": "Information not provided",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a7323ef5542994cef4bc477",
+      "agent_type": "reflexion",
+      "gold_answer": "The Battle of Tarawa",
+      "predicted_answer": "Information not available",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "looping",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ae738f75542991bbc9761c4",
+      "agent_type": "reflexion",
+      "gold_answer": "2003",
+      "predicted_answer": "I cannot answer this question. The provided context does",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a89fc665542993b751ca9de",
+      "agent_type": "reflexion",
+      "gold_answer": "Universal Studios Florida",
+      "predicted_answer": "Not in the provided context.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a76394c5542994ccc918725",
+      "agent_type": "reflexion",
+      "gold_answer": "1968",
+      "predicted_answer": "1968",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abe91895542993f32c2a168",
+      "agent_type": "reflexion",
+      "gold_answer": "no",
+      "predicted_answer": "No",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5ab3ede755429976abd1bcf4",
+      "agent_type": "reflexion",
+      "gold_answer": "John Ford",
+      "predicted_answer": "I cannot answer this question as the provided context does not mention any 1940 films in which John Arledge appeared.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adfec5f55429942ec259b8d",
+      "agent_type": "reflexion",
+      "gold_answer": "yes",
+      "predicted_answer": "I cannot answer this question.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ac2660d55429951e9e685a1",
+      "agent_type": "reflexion",
+      "gold_answer": "Idina Kim Menzel",
+      "predicted_answer": "Information not available",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5ab6a3a3554299710c8d1f0d",
+      "agent_type": "reflexion",
+      "gold_answer": "ten episodes",
+      "predicted_answer": "10",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a75eda35542994ccc918661",
+      "agent_type": "reflexion",
+      "gold_answer": "15th consecutive",
+      "predicted_answer": "The context does not provide this information.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abb8ebe5542993f40c73b2d",
+      "agent_type": "reflexion",
+      "gold_answer": "\"Dancing on Ice\" around the world",
+      "predicted_answer": "The context does not provide information about Claudia Albertario.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "incomplete_multi_hop",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a8318955542990548d0b177",
+      "agent_type": "reflexion",
+      "gold_answer": "two Grammy awards",
+      "predicted_answer": "Two",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5a81cb2c5542990a1d231ec4",
+      "agent_type": "reflexion",
+      "gold_answer": "Player of the Year",
+      "predicted_answer": "Crystal Palace F.C. Player of the Year",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5a8ec7cc5542995a26add518",
+      "agent_type": "reflexion",
+      "gold_answer": "Girlfriends",
+      "predicted_answer": "Not in context",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5abd9c2355429924427fd06c",
+      "agent_type": "reflexion",
+      "gold_answer": "2005",
+      "predicted_answer": "Information not available.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5adeab4555429975fa854f5f",
+      "agent_type": "reflexion",
+      "gold_answer": "4,530",
+      "predicted_answer": "Not enough information",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    },
+    {
+      "qid": "5a82360055429903bc27ba46",
+      "agent_type": "reflexion",
+      "gold_answer": "Quasimodo",
+      "predicted_answer": "Quasimodo",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "5abacac45542996cc5e49e94",
+      "agent_type": "reflexion",
+      "gold_answer": "West Dorset, South West England.",
+      "predicted_answer": "South West England",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "5adf24155542992d7e9f92af",
+      "agent_type": "reflexion",
+      "gold_answer": "Oberkommando der Wehrmacht",
+      "predicted_answer": "Not mentioned in the context",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "entity_drift",
+      "reflection_count": 2
+    }
+  ],
+  "extensions": [
+    "structured_evaluator",
+    "reflection_memory",
+    "benchmark_report_json",
+    "mock_mode_for_autograding"
+  ],
+  "discussion": "Reflexion significantly outperforms ReAct on HotpotQA by allowing the agent to learn from its mistakes across multiple attempts. The most common failure mode for ReAct is entity_drift, where the agent identifies the correct topic but retrieves a related but wrong entity. Reflexion mitigates this by feeding structured reflection memory into subsequent Actor calls, nudging the model toward the correct reasoning chain. However, reflection_overfit emerges when the model repeats similar wrong answers despite reflection, suggesting the base model lacks sufficient world knowledge. The trade-off is clear: Reflexion uses roughly 3x more tokens and takes 3x longer per question, but nearly doubles accuracy. Evaluator quality is a bottleneck \u2014 a weak evaluator that marks correct answers as wrong prevents the agent from stopping early, wasting attempts and tokens."
+}
